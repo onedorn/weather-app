@@ -14,12 +14,6 @@ const getCity = async (city) => {
     return data[0];
 }
 
-getCity('Amsterdam').then(data => {
-        return getWeather(data.Key);
-    }).then(data => {
-        console.log(data);
-    }).catch(err => console.log(err));
-
 // Second API request, searching for a condition at that HTMLTextAreaElement, for weater condition in my case
 
 const getWeather = async (id) => {
@@ -29,5 +23,5 @@ const getWeather = async (id) => {
     const response = await fetch(base + query);
     const data = await response.json();
 
-    console.log(data);
+    return data[0];
 }
